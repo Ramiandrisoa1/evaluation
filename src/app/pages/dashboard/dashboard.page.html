@@ -1,11 +1,42 @@
 <div>
   <div>
-    <!-- <app-side-bar [name]="name" [userType]="user_Type"></app-side-bar> -->
     <button routerLink="/page1">ok</button>
   </div>
-  <div id="all_content">
-    <div class="all_content">
-      <router-outlet></router-outlet>
+  <form class="form-scroll" [formGroup]="form">
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form3Example3">Nom du produit</label>
+      <input
+        type="text"
+        formControlName="name"
+        class="form-control form-control-lg"
+        placeholder="Nom"
+        required
+      />
+      <!-- <span class="error" *ngIf="submitted && f.title.errors"
+        >ce champ est requis</span
+      > -->
     </div>
-  </div>
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form3Example3">Price</label>
+      <input
+        type="number"
+        formControlName="price"
+        class="form-control form-control-lg"
+        placeholder="price"
+      />
+      <!-- <span class="error" *ngIf="submitted && f.price.errors"
+        >ce champ est requis</span
+      > -->
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <button
+        type="button"
+        class="btn btn-primary btn-lg"
+        style="padding-left: 2.5rem; padding-right: 2.5rem"
+      >
+        Ajout
+      </button>
+    </div>
+  </form>
 </div>
